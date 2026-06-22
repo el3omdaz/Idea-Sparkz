@@ -1,4 +1,4 @@
-const CACHE = "ideaspark-v121";
+const CACHE = "ideaspark-v124-borderless-splash";
 const ASSETS = ["/", "/index.html", "/manifest.json"];
 
 self.addEventListener("install", e => {
