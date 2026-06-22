@@ -1,5 +1,5 @@
-const CACHE = "ideaspark-v122-splash-inline";
-const ASSETS = ["./", "./index.html", "./manifest.json"];
+const CACHE = "ideaspark-v121";
+const ASSETS = ["/", "/index.html", "/manifest.json"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
@@ -14,7 +14,7 @@ self.addEventListener("activate", e => {
 });
 
 self.addEventListener("fetch", e => {
-  if (e.request.url.includes("anthropic.com") || e.request.url.includes("openrouter.ai") || e.request.url.includes("openrouter.ai")) return;
+  if (e.request.url.includes("anthropic.com") || e.request.url.includes("openrouter.ai")) return;
   // Network first for HTML — always get fresh version
   if (e.request.url.endsWith(".html") || e.request.url.endsWith("/")) {
     e.respondWith(
